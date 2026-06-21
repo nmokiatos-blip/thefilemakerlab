@@ -6,11 +6,11 @@ import { Navigation } from "@/components/navigation";
 export const metadata: Metadata = {
   metadataBase: new URL("https://thefilemakerlab.com"),
   title: {
-    default: "The FileMaker Lab | AI Workflows for FileMaker Developers",
+    default: "The FileMaker Lab | Beyond the Limits",
     template: "%s | The FileMaker Lab"
   },
   description:
-    "Experiments, tools, webinars, and AI workflows for serious FileMaker developers exploring automation, DDR/XML analysis, plugins, Codex, and performance.",
+    "A futuristic software lab for FileMaker, AI, plugins, automation, native code, performance engineering, and real-world system building.",
   applicationName: "The FileMaker Lab",
   keywords: [
     "FileMaker",
@@ -22,17 +22,17 @@ export const metadata: Metadata = {
     "FileMaker performance"
   ],
   openGraph: {
-    title: "The FileMaker Lab",
+    title: "The FileMaker Lab | Beyond the Limits",
     description:
-      "Experiments, tools, and AI workflows for serious FileMaker developers.",
+      "A futuristic command center where FileMaker becomes something bigger.",
     url: "https://thefilemakerlab.com",
     siteName: "The FileMaker Lab",
     images: [
       {
-        url: "/images/lab-hero.png",
-        width: 1897,
-        height: 829,
-        alt: "A dark developer laboratory workstation with data analysis panels"
+        url: "/images/the-filemaker-lab-command-center.png",
+        width: 1680,
+        height: 944,
+        alt: "The FileMaker Lab futuristic command center visual"
       }
     ],
     locale: "en_US",
@@ -40,10 +40,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The FileMaker Lab",
+    title: "The FileMaker Lab | Beyond the Limits",
     description:
-      "Experiments, tools, and AI workflows for serious FileMaker developers.",
-    images: ["/images/lab-hero.png"]
+      "A futuristic command center where FileMaker becomes something bigger.",
+    images: ["/images/the-filemaker-lab-command-center.png"]
   },
   alternates: {
     canonical: "/"

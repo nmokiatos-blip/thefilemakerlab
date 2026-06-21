@@ -7,11 +7,12 @@ export function Navigation() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-graphite-950/80 backdrop-blur-xl">
       <Container className="flex min-h-16 items-center justify-between gap-5">
         <Link href="/" className="flex items-center gap-3" aria-label="The FileMaker Lab home">
-          <span className="grid size-9 place-items-center rounded-lg border border-lab-cyan/35 bg-lab-cyan/10 shadow-glow">
-            <span className="size-2 rounded-full bg-lab-cyan" />
+          <span className="relative grid size-9 place-items-center rounded-lg border border-lab-cyan/35 bg-lab-cyan/10 shadow-glow">
+            <span className="size-3 rounded-b-full border border-lab-cyan border-t-transparent" />
+            <span className="absolute bottom-2 size-1.5 rounded-full bg-lab-green" />
           </span>
           <span className="text-sm font-semibold uppercase tracking-[0.18em] text-white">
-            FileMaker Lab
+            The FileMaker Lab
           </span>
         </Link>
         <nav aria-label="Primary navigation" className="hidden items-center gap-1 md:flex">
@@ -25,12 +26,6 @@ export function Navigation() {
             </Link>
           ))}
         </nav>
-        <Link
-          href="/contact"
-          className="hidden min-h-10 items-center rounded-lg border border-lab-cyan/35 px-4 py-2 text-sm font-semibold text-lab-cyan transition hover:bg-lab-cyan/10 sm:inline-flex"
-        >
-          Contact
-        </Link>
       </Container>
       <nav
         aria-label="Mobile navigation"

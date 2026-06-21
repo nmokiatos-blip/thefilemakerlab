@@ -1,10 +1,10 @@
 export const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/webinars", label: "Webinars" },
-  { href: "/lab-notes", label: "Lab Notes" },
-  { href: "/tools", label: "Tools" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" }
+  { href: "/#lab-notes", label: "Lab Notes" },
+  { href: "/#lab-sessions", label: "Lab Sessions" },
+  { href: "/#lab-tools", label: "Lab Tools" },
+  { href: "/#field-reports", label: "Field Reports" },
+  { href: "/#beyond", label: "Beyond the Limits" },
+  { href: "/#work", label: "Work With Nick" },
 ];
 
 export const labAreas = [
@@ -49,6 +49,187 @@ export const labAreas = [
     description:
       "Prototype interfaces, templates, and patterns that make FileMaker solutions sharper, faster, and easier to maintain.",
     accent: "violet"
+  }
+];
+
+export const bridgeMoments = [
+  "Business networks",
+  "The internet",
+  "Mobile work",
+  "APIs and SaaS",
+  "Cloud automation",
+  "AI systems"
+];
+
+export const aiReach = [
+  "C++",
+  "Swift",
+  "Xcode",
+  "Visual Studio",
+  "Native macOS tools",
+  "Native iOS tools",
+  "Native Windows tools",
+  "Plugins",
+  "APIs",
+  "Automation engines",
+  "Server-side diagnostics",
+  "XML generation",
+  "AI-powered workflows",
+  "Performance engineering"
+];
+
+export const labSessions = [
+  {
+    number: "001",
+    title: "The AI Shift: Why FileMaker Is More Relevant Than Ever",
+    description:
+      "FileMaker has always crossed technology waves. AI makes the bridge stronger.",
+    status: "Coming Soon"
+  },
+  {
+    number: "002",
+    title: "Stop Grinding Code: Let AI Handle the Repetition",
+    description:
+      "Scripts, calculations, parsing, formatting, and routine logic are changing fast.",
+    status: "Coming Soon"
+  },
+  {
+    number: "003",
+    title: "FileMaker Meets Native macOS",
+    description:
+      "A look at native tools, plugin thinking, and what happens when FileMaker leaves the old boundaries.",
+    status: "Coming Soon"
+  }
+];
+
+export const labNoteShorts = [
+  {
+    title: "Why FileMaker Is a Bridge Again",
+    date: "Soon",
+    accent: "cyan"
+  },
+  {
+    title: "Stop Grinding Routine Scripts",
+    date: "Soon",
+    accent: "green"
+  },
+  {
+    title: "DDR Exports Are Signal",
+    date: "Soon",
+    accent: "blue"
+  },
+  {
+    title: "Native Tools Change the Edge",
+    date: "Soon",
+    accent: "violet"
+  },
+  {
+    title: "The AI Wave Is Already Here",
+    date: "Soon",
+    accent: "red"
+  }
+];
+
+export const labToolCards = [
+  {
+    title: "Sample Files",
+    description: "Demo files and working patterns for serious FileMaker builders.",
+    icon: "FM"
+  },
+  {
+    title: "Plugins",
+    description: "Native plugin concepts, prototypes, and advanced extension ideas.",
+    icon: "++"
+  },
+  {
+    title: "Snippets",
+    description: "Script XML, custom functions, utilities, and reusable fragments.",
+    icon: "</>"
+  },
+  {
+    title: "Prompts",
+    description: "AI prompts for analysis, diagnostics, planning, and system design.",
+    icon: "AI"
+  }
+];
+
+export const fieldReports = [
+  {
+    title: "Performance Diagnosis",
+    description: "Find the pressure points, measure the behavior, and fix what matters."
+  },
+  {
+    title: "Automation Architecture",
+    description: "Design repeatable workflows that survive real operational complexity."
+  },
+  {
+    title: "System Modernization",
+    description: "Move older FileMaker systems toward cleaner, faster, more connected work."
+  }
+];
+
+export const labUniverse = [
+  {
+    title: "Lab Sessions",
+    eyebrow: "Episodes",
+    description: "Main videos, webinars, and long-form episodes.",
+    example: "Lab Session 001 - The AI Shift: Why FileMaker Is More Relevant Than Ever",
+    accent: "cyan"
+  },
+  {
+    title: "Lab Notes",
+    eyebrow: "Companions",
+    description:
+      "Written articles, summaries, transcripts, explanations, and field-ready notes.",
+    example: "Lab Notes 001 - Key Concepts from The AI Shift",
+    accent: "green"
+  },
+  {
+    title: "Lab Experiments",
+    eyebrow: "Prototypes",
+    description:
+      "Prototypes, tests, proof-of-concepts, and wild ideas.",
+    example:
+      "Native macOS portals, AI PDF extraction, plugin UI experiments, DDR tools, WebViewer replacement ideas",
+    accent: "violet"
+  },
+  {
+    title: "Lab Tools",
+    eyebrow: "Utilities",
+    description: "Downloadable resources for builders.",
+    example: "Demo files, custom functions, script XML snippets, prompts, templates, utilities, code samples",
+    accent: "blue"
+  },
+  {
+    title: "Field Reports",
+    eyebrow: "Case studies",
+    description:
+      "Real-world case studies from actual systems.",
+    example: "Performance diagnosis, automation architecture, AI integration, modernization, customer problems solved in the lab",
+    accent: "amber"
+  }
+];
+
+export const services = [
+  {
+    title: "Lab Clinic",
+    description:
+      "Focused help for bugs, broken workflows, performance issues, confusing scripts, difficult calculations, integrations, and systems that need expert diagnosis."
+  },
+  {
+    title: "Lab Mentoring",
+    description:
+      "One-on-one training for FileMaker developers, entrepreneurs, product managers, project managers, and problem-solvers learning FileMaker + AI + modern development methods."
+  },
+  {
+    title: "Lab Partner Sessions",
+    description:
+      "Strategic sessions for architecture, planning, product thinking, workflow design, process mapping, and turning an idea into a working system."
+  },
+  {
+    title: "Lab Engineering",
+    description:
+      "Hands-on advanced work: plugin concepts, native macOS/iOS tools, AI workflows, automation engines, APIs, XML generation, custom utilities, and serious FileMaker system design."
   }
 ];
 

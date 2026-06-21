@@ -1,190 +1,273 @@
 import Image from "next/image";
 import { ButtonLink } from "@/components/button-link";
 import { Container } from "@/components/container";
-import { ContactForm } from "@/components/contact-form";
-import { FeatureCard, ListingCard } from "@/components/cards";
-import { LabConsole } from "@/components/lab-console";
 import { SectionHeader } from "@/components/section-header";
-import { labAreas, labNotes, tools, webinars } from "@/data/site";
+import {
+  fieldReports,
+  labNoteShorts,
+  labSessions,
+  labToolCards,
+  services
+} from "@/data/site";
+
+function PlayIcon() {
+  return (
+    <span className="grid size-11 place-items-center rounded-full border border-white/15 bg-white/10 text-lab-cyan shadow-glow transition group-hover:scale-105 group-hover:bg-lab-cyan group-hover:text-graphite-950">
+      <span className="ml-0.5 h-0 w-0 border-y-[6px] border-l-[9px] border-y-transparent border-l-current" />
+    </span>
+  );
+}
+
+function DownloadIcon() {
+  return (
+    <span aria-hidden="true" className="relative size-4">
+      <span className="absolute left-1/2 top-0 h-3 w-px -translate-x-1/2 bg-current" />
+      <span className="absolute bottom-0 left-1/2 size-2 -translate-x-1/2 rotate-45 border-b border-r border-current" />
+    </span>
+  );
+}
+
+function ShortThumbnail({ accent }: { accent: string }) {
+  const accentMap: Record<string, string> = {
+    cyan: "from-lab-cyan/35 via-lab-cyan/10",
+    green: "from-lab-green/35 via-lab-green/10",
+    blue: "from-lab-blue/35 via-lab-blue/10",
+    violet: "from-lab-violet/35 via-lab-violet/10",
+    red: "from-red-400/35 via-red-400/10"
+  };
+
+  return (
+    <div className={`relative aspect-[9/14] overflow-hidden rounded-lg bg-gradient-to-br ${accentMap[accent] ?? accentMap.cyan} to-graphite-950`}>
+      <div className="lab-grid absolute inset-0 opacity-60" />
+      <div className="absolute inset-x-5 top-5 h-20 rounded-lg border border-white/10 bg-black/20" />
+      <div className="absolute inset-x-5 bottom-5 space-y-2">
+        <div className="h-2 rounded-full bg-white/35" />
+        <div className="h-2 w-2/3 rounded-full bg-white/20" />
+      </div>
+      <div className="absolute right-4 top-4 size-2 rounded-full bg-red-300 shadow-[0_0_18px_rgba(252,165,165,0.9)]" />
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <main>
-      <section className="relative min-h-[calc(100svh-8rem)] overflow-hidden border-b border-white/10">
+    <main className="overflow-hidden">
+      <section className="relative border-b border-white/10 bg-black">
+        <h1 className="sr-only">The FileMaker Lab - Beyond the Limits</h1>
+        <p className="sr-only">
+          Where Nick Hunter pushes FileMaker beyond its limits.
+        </p>
         <Image
-          src="/images/lab-hero.png"
-          alt="A dark developer laboratory workstation with translucent data panels"
-          fill
+          src="/images/the-filemaker-lab-command-center.png"
+          alt="The FileMaker Lab futuristic command center visual with Nick Hunter, FileMaker panels, code, and green lab branding"
+          width={1680}
+          height={944}
           priority
-          className="object-cover object-center opacity-56"
+          className="mx-auto h-auto w-full max-w-[1680px]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,6,8,0.98)_0%,rgba(5,6,8,0.9)_28%,rgba(5,6,8,0.56)_58%,rgba(5,6,8,0.84)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,6,8,0.15)_0%,rgba(5,6,8,0.42)_74%,#050608_100%)]" />
-        <Container className="relative flex min-h-[calc(100svh-8rem)] items-center py-16">
-          <div className="grid w-full gap-10 lg:grid-cols-[1fr_420px] lg:items-end">
-            <div className="max-w-4xl">
-              <p className="mb-5 font-mono text-xs font-semibold uppercase tracking-[0.24em] text-lab-cyan">
-                The FileMaker Lab
-              </p>
-              <h1 className="text-balance text-5xl font-semibold leading-[0.98] text-white sm:text-7xl lg:text-8xl">
-                The FileMaker Lab
-              </h1>
-              <p className="mt-7 max-w-2xl text-xl leading-8 text-slate-200 sm:text-2xl">
-                Experiments, tools, and AI workflows for serious FileMaker developers.
-              </p>
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <ButtonLink href="/tools">Explore the Lab</ButtonLink>
-                <ButtonLink href="/webinars" variant="secondary">
-                  Watch Webinars
-                </ButtonLink>
-              </div>
-            </div>
-            <LabConsole />
-          </div>
-        </Container>
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-graphite-950 to-transparent" />
       </section>
 
-      <section className="py-20 sm:py-28">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <SectionHeader
-              eyebrow="What this is"
-              title="A practical research space for advanced FileMaker work."
-            />
-            <div className="space-y-5 text-lg leading-8 text-slate-300">
-              <p>
-                The FileMaker Lab is where FileMaker developers can explore AI-assisted development,
-                performance analysis, XML and DDR intelligence, plugin workflows, automation, and
-                modern development practice without losing the practical edge that real systems require.
-              </p>
-              <p>
-                It is built for experiments that can become reusable tools, webinars, prototypes,
-                field notes, and production patterns. The goal is not novelty. The goal is better
-                FileMaker work with clearer leverage.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <section id="lab-areas" className="border-y border-white/10 bg-white/[0.02] py-20 sm:py-28">
-        <Container>
-          <SectionHeader
-            eyebrow="Featured lab areas"
-            title="Research tracks for the next generation of FileMaker development."
-            description="Each area starts as investigation, then becomes methods, tools, reusable workflows, or training."
-          />
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {labAreas.map((area) => (
-              <FeatureCard key={area.title} {...area} />
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="py-20 sm:py-28">
-        <Container>
-          <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
-            <SectionHeader
-              eyebrow="Webinars"
-              title="Deep sessions, practical experiments, useful takeaways."
-            />
-            <ButtonLink href="/webinars" variant="secondary">
-              View Webinars
-            </ButtonLink>
-          </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {webinars.map((webinar, index) => (
-              <ListingCard
-                key={webinar.title}
-                title={webinar.title}
-                description={webinar.description}
-                meta={webinar.status}
-                index={index}
-              />
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="border-y border-white/10 bg-graphite-900/60 py-20 sm:py-28">
+      <section id="lab-notes" className="section-reveal py-24 sm:py-32">
         <Container>
           <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
             <SectionHeader
               eyebrow="Lab Notes"
-              title="Short research notes for sharper developer workflows."
+              title="Short ideas, sharp observations, and companion notes from the lab."
             />
             <ButtonLink href="/lab-notes" variant="secondary">
-              Read Notes
+              View All Lab Notes
             </ButtonLink>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2">
-            {labNotes.map((note, index) => (
-              <ListingCard
-                key={note.title}
-                title={note.title}
-                description={note.description}
-                meta={note.category}
-                index={index}
-              />
+          <div className="mt-12 flex gap-5 overflow-x-auto pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {labNoteShorts.map((note) => (
+              <article key={note.title} className="group w-64 shrink-0">
+                <div className="lab-card overflow-hidden p-3 transition duration-300 group-hover:-translate-y-1 group-hover:border-lab-cyan/45">
+                  <ShortThumbnail accent={note.accent} />
+                  <div className="p-3">
+                    <div className="mb-4 flex items-center justify-between">
+                      <span className="rounded-full border border-lab-cyan/30 bg-lab-cyan/10 px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-lab-cyan">
+                        Short
+                      </span>
+                      <PlayIcon />
+                    </div>
+                    <h3 className="text-lg font-semibold leading-snug text-white">
+                      {note.title}
+                    </h3>
+                    <p className="mt-3 font-mono text-xs uppercase tracking-[0.18em] text-slate-500">
+                      {note.date}
+                    </p>
+                  </div>
+                </div>
+              </article>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="py-20 sm:py-28">
+      <section id="lab-sessions" className="section-reveal border-y border-white/10 bg-white/[0.02] py-24 sm:py-32">
         <Container>
-          <SectionHeader
-            eyebrow="Tools"
-            title="Prototype utilities for FileMaker developers who want stronger signals."
-            description="These placeholders are ready to become product pages, downloads, private previews, or documentation hubs."
-          />
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {tools.map((tool, index) => (
-              <ListingCard
-                key={tool.title}
-                title={tool.title}
-                description={tool.description}
-                meta={tool.state}
-                index={index}
-              />
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="border-y border-white/10 bg-white/[0.02] py-20 sm:py-28">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
             <SectionHeader
-              eyebrow="About"
-              title="Built by a long-time FileMaker developer experimenting with what comes next."
+              eyebrow="Lab Sessions"
+              title="Deep dives, webinars, and long-form experiments."
             />
-            <div className="space-y-5 text-lg leading-8 text-slate-300">
-              <p>
-                The FileMaker Lab is led from the perspective of a developer who has spent years
-                inside real FileMaker systems and is now testing how AI, plugins, automation,
-                performance tools, and better workflows can change the craft.
-              </p>
-              <p>
-                The lab favors useful experiments over hype: small prototypes, careful analysis,
-                native tooling where it matters, and workflows that survive contact with production.
-              </p>
+            <ButtonLink href="/webinars" variant="secondary">
+              Watch Lab Sessions
+            </ButtonLink>
+          </div>
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            {labSessions.slice(0, 2).map((session) => (
+              <article key={session.number} className="group lab-card overflow-hidden p-4 transition duration-300 hover:-translate-y-1 hover:border-lab-cyan/45">
+                <div className="relative aspect-video overflow-hidden rounded-lg bg-[radial-gradient(circle_at_70%_25%,rgba(56,232,255,0.28),transparent_36%),linear-gradient(135deg,rgba(89,240,165,0.15),rgba(5,6,8,0.96))]">
+                  <div className="lab-grid absolute inset-0 opacity-65" />
+                  <div className="absolute left-5 top-5 rounded-lg border border-white/10 bg-black/25 px-3 py-2 font-mono text-xs uppercase tracking-[0.2em] text-lab-green">
+                    Session {session.number}
+                  </div>
+                  <div className="absolute inset-0 grid place-items-center">
+                    <PlayIcon />
+                  </div>
+                </div>
+                <div className="p-3 sm:p-4">
+                  <span className="rounded-full border border-lab-cyan/30 bg-lab-cyan/10 px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-lab-cyan">
+                    Lab Session
+                  </span>
+                  <h3 className="mt-5 text-2xl font-semibold leading-tight text-white">
+                    {session.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-6 text-slate-300">
+                    {session.description}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section id="lab-tools" className="section-reveal py-24 sm:py-32">
+        <Container>
+          <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+            <SectionHeader
+              eyebrow="Lab Tools"
+              title="Sample files, plugins, snippets, and prompts."
+            />
+            <ButtonLink href="/tools" variant="secondary">
+              Download Lab Tools
+            </ButtonLink>
+          </div>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {labToolCards.map((tool) => (
+              <article key={tool.title} className="lab-card group flex min-h-72 flex-col p-6 transition duration-300 hover:-translate-y-1 hover:border-lab-green/45">
+                <div className="grid size-14 place-items-center rounded-lg border border-lab-cyan/30 bg-lab-cyan/10 font-mono text-sm font-semibold text-lab-cyan shadow-glow">
+                  {tool.icon}
+                </div>
+                <h3 className="mt-8 text-2xl font-semibold text-white">{tool.title}</h3>
+                <p className="mt-4 text-sm leading-6 text-slate-300">{tool.description}</p>
+                <a
+                  href="mailto:hello@thefilemakerlab.com?subject=Lab%20Tools"
+                  className="mt-auto inline-flex items-center gap-2 pt-8 text-sm font-semibold text-lab-cyan transition group-hover:text-white"
+                >
+                  Download <DownloadIcon />
+                </a>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section id="field-reports" className="section-reveal border-y border-white/10 bg-graphite-900/70 py-24 sm:py-32">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+            <div>
+              <SectionHeader
+                eyebrow="Field Reports"
+                title="Real-world problems. Real systems. Real solutions."
+              />
+              <div className="mt-8">
+                <ButtonLink href="/lab-notes" variant="secondary">
+                  Read Field Reports
+                </ButtonLink>
+              </div>
+            </div>
+            <div className="grid gap-5 md:grid-cols-3">
+              {fieldReports.map((report, index) => (
+                <article key={report.title} className="lab-panel p-6 transition duration-300 hover:-translate-y-1 hover:border-lab-cyan/45">
+                  <p className="font-mono text-sm text-lab-green">
+                    {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <h3 className="mt-8 text-xl font-semibold leading-tight text-white">
+                    {report.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-6 text-slate-300">
+                    {report.description}
+                  </p>
+                </article>
+              ))}
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="py-20 sm:py-28">
+      <section id="beyond" className="section-reveal relative py-28 sm:py-40">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(56,232,255,0.16),transparent_36%)]" />
+        <Container className="relative">
+          <div className="mx-auto max-w-5xl text-center">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.26em] text-lab-cyan">
+              Beyond the Limits
+            </p>
+            <h2 className="mt-5 text-balance text-4xl font-semibold leading-tight text-white sm:text-6xl">
+              FileMaker has always been more than a database. It has always been a bridge.
+            </h2>
+            <div className="mx-auto mt-10 max-w-3xl space-y-6 text-lg leading-8 text-slate-300">
+              <p>
+                FileMaker crossed every major technology wave: business networks,
+                the internet, mobile, APIs, cloud services, automation, and now AI.
+              </p>
+              <p>
+                AI does not make FileMaker less relevant. It makes FileMaker more
+                powerful.
+              </p>
+              <p>
+                The future belongs to builders who connect FileMaker to the next
+                wave: AI, native code, plugins, automation engines, APIs, and
+                serious real-world systems.
+              </p>
+            </div>
+            <p className="mt-12 text-balance text-3xl font-semibold leading-tight text-lab-green sm:text-5xl">
+              Don&apos;t run from the AI wave. Learn to ride it.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      <section id="work" className="section-reveal border-t border-white/10 py-24 sm:py-32">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <SectionHeader
-              eyebrow="Contact"
-              title="Have a hard FileMaker problem or a lab idea?"
-              description="Send a note about webinars, tool requests, AI workflow questions, consulting, or collaboration."
-            />
-            <ContactForm />
+          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+            <div>
+              <SectionHeader
+                eyebrow="Work With Nick"
+                title="Bring your problem into the lab."
+                description="No heavy contracts. No complicated process. Book the time you need. Bring the problem. Let's solve it."
+              />
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <ButtonLink href="mailto:hello@thefilemakerlab.com">Work With Nick</ButtonLink>
+                <ButtonLink href="mailto:hello@thefilemakerlab.com?subject=Book%20a%20Lab%20Clinic" variant="secondary">
+                  Book a Lab Clinic
+                </ButtonLink>
+              </div>
+            </div>
+            <div className="grid gap-5 sm:grid-cols-2">
+              {services.map((service) => (
+                <article key={service.title} className="lab-card p-6 transition duration-300 hover:-translate-y-1 hover:border-lab-cyan/45">
+                  <h3 className="text-xl font-semibold text-white">{service.title}</h3>
+                  <p className="mt-4 text-sm leading-6 text-slate-300">
+                    {service.description}
+                  </p>
+                </article>
+              ))}
+            </div>
           </div>
         </Container>
       </section>

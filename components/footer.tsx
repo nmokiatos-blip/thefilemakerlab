@@ -11,7 +11,7 @@ export function Footer() {
             The FileMaker Lab
           </p>
           <p className="mt-3 max-w-xl text-sm leading-6 text-slate-400">
-            Experiments, tools, and AI workflows for serious FileMaker developers.
+            The place where FileMaker becomes something bigger.
           </p>
         </div>
         <nav className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate-400" aria-label="Footer navigation">

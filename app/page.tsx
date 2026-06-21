@@ -69,6 +69,54 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-graphite-950 to-transparent" />
       </section>
 
+      <section className="section-reveal border-b border-white/10 py-20 sm:py-28">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+            <div>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.26em] text-lab-cyan">
+                What this is
+              </p>
+              <h2 className="mt-5 text-balance text-3xl font-semibold leading-tight text-white sm:text-5xl">
+                More than 40 years of FileMaker development experience, opened up.
+              </h2>
+            </div>
+            <div className="space-y-5 text-lg leading-8 text-slate-300">
+              <p>
+                The FileMaker Lab is where Nick Hunter opens the doors to more
+                than 40 years of FileMaker development experience.
+              </p>
+              <p>
+                This is a dedicated space for sharing the knowledge, best
+                practices, techniques, methods, architecture, and problem-solving
+                habits that come from building real systems for real people.
+              </p>
+              <p>
+                From the first customer idea to the final working solution, The
+                FileMaker Lab explores every stage of development: how to
+                conceive the file, structure the architecture, build the
+                solution, improve old systems, modernize workflows, connect AI,
+                create custom plugins, automate processes, and push FileMaker
+                beyond its traditional limits.
+              </p>
+              <p>
+                Through webinars, videos, tools, experiments, and field notes,
+                Nick shares what he is learning and building in his everyday work
+                with FileMaker, AI-assisted development, performance analysis,
+                custom plugins, automation, and modern development practice.
+              </p>
+              <div className="border-l border-lab-green/40 pl-5">
+                <p className="text-xl font-semibold text-white">
+                  The goal is not novelty.
+                </p>
+                <p className="mt-2 text-xl font-semibold text-lab-green">
+                  The goal is better FileMaker work with clearer leverage.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       <section id="lab-notes" className="section-reveal py-24 sm:py-32">
         <Container>
           <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">

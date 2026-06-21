@@ -71,16 +71,46 @@ export default function Home() {
 
       <section className="section-reveal border-b border-white/10 py-20 sm:py-28">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
-            <div>
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.26em] text-lab-cyan">
-                What this is
-              </p>
-              <h2 className="mt-5 text-balance text-3xl font-semibold leading-tight text-white sm:text-5xl">
-                More than 40 years of FileMaker development experience, opened up.
-              </h2>
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div className="lab-card group overflow-hidden p-3">
+              <div className="relative aspect-video overflow-hidden rounded-lg bg-[radial-gradient(circle_at_72%_28%,rgba(56,232,255,0.25),transparent_34%),linear-gradient(135deg,rgba(89,240,165,0.14),rgba(5,6,8,0.98))]">
+                <div className="lab-grid absolute inset-0 opacity-70" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
+                <div className="absolute left-5 top-5 rounded-lg border border-white/10 bg-black/35 px-3 py-2 font-mono text-xs uppercase tracking-[0.2em] text-lab-cyan">
+                  Intro Video
+                </div>
+                <div className="absolute inset-0 grid place-items-center">
+                  <span className="grid size-16 place-items-center rounded-full border border-white/15 bg-white/10 text-lab-cyan shadow-glow transition group-hover:scale-105 group-hover:bg-lab-cyan group-hover:text-graphite-950">
+                    <span className="ml-1 h-0 w-0 border-y-[9px] border-l-[14px] border-y-transparent border-l-current" />
+                  </span>
+                </div>
+                <div className="absolute inset-x-5 bottom-5">
+                  <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-lab-green">
+                    YouTube Placeholder
+                  </p>
+                  <p className="mt-2 text-xl font-semibold leading-tight text-white">
+                    The FileMaker Lab Intro
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center justify-between gap-4 px-3 py-4">
+                <p className="text-sm text-slate-400">
+                  Replace with the YouTube embed when the intro is published.
+                </p>
+                <span className="rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-slate-400">
+                  Coming Soon
+                </span>
+              </div>
             </div>
             <div className="space-y-5 text-lg leading-8 text-slate-300">
+              <div>
+                <p className="font-mono text-xs font-semibold uppercase tracking-[0.26em] text-lab-cyan">
+                  What this is
+                </p>
+                <h2 className="mt-5 text-balance text-3xl font-semibold leading-tight text-white sm:text-5xl">
+                  More than 40 years of FileMaker development experience, opened up.
+                </h2>
+              </div>
               <p>
                 The FileMaker Lab is where Nick Hunter opens the doors to more
                 than 40 years of FileMaker development experience.

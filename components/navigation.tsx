@@ -5,24 +5,22 @@ import { Container } from "@/components/container";
 export function Navigation() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-graphite-950/80 backdrop-blur-xl">
-      <Container className="flex min-h-16 items-center justify-between gap-5">
-        <Link href="/" className="flex items-center gap-3" aria-label="The FileMaker Lab home">
-          <span className="relative grid size-9 place-items-center rounded-lg border border-lab-cyan/35 bg-lab-cyan/10 shadow-glow">
-            <span className="size-3 rounded-b-full border border-lab-cyan border-t-transparent" />
-            <span className="absolute bottom-2 size-1.5 rounded-full bg-lab-green" />
-          </span>
-          <span className="text-sm font-semibold uppercase tracking-[0.18em] text-white">
-            The FileMaker Lab
-          </span>
-        </Link>
-        <nav aria-label="Primary navigation" className="hidden items-center gap-1 md:flex">
+      <Container className="flex min-h-16 items-center justify-center">
+        <nav aria-label="Primary navigation" className="hidden items-center justify-center gap-2 md:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/[0.06] hover:text-white"
+              className={
+                item.label === "Work With Nick"
+                  ? "inline-flex items-center gap-2 rounded-lg border border-lab-green/40 bg-lab-green/10 px-4 py-2 text-sm font-semibold text-lab-green shadow-[0_0_28px_rgba(89,240,165,0.12)] transition hover:border-lab-green/70 hover:bg-lab-green hover:text-graphite-950"
+                  : "rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/[0.06] hover:text-white"
+              }
             >
-              {item.label}
+              <span>{item.label}</span>
+              {item.label === "Work With Nick" ? (
+                <span aria-hidden="true">-&gt;</span>
+              ) : null}
             </Link>
           ))}
         </nav>
@@ -35,9 +33,16 @@ export function Navigation() {
           <Link
             key={item.href}
             href={item.href}
-            className="shrink-0 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-xs font-medium text-slate-300"
+            className={
+              item.label === "Work With Nick"
+                ? "inline-flex shrink-0 items-center gap-2 rounded-lg border border-lab-green/40 bg-lab-green/10 px-3 py-2 text-xs font-semibold text-lab-green"
+                : "shrink-0 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-xs font-medium text-slate-300"
+            }
           >
-            {item.label}
+            <span>{item.label}</span>
+            {item.label === "Work With Nick" ? (
+              <span aria-hidden="true">-&gt;</span>
+            ) : null}
           </Link>
         ))}
       </nav>

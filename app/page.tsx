@@ -108,7 +108,7 @@ export default function Home() {
                   What this is
                 </p>
                 <h2 className="mt-5 text-balance text-3xl font-semibold leading-tight text-white sm:text-5xl">
-                  More than 40 years of FileMaker development experience, opened up.
+                  Decades of FileMaker development experience, opened up.
                 </h2>
               </div>
               <p>

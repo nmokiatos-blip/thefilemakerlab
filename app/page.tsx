@@ -3,6 +3,7 @@ import { ButtonLink } from "@/components/button-link";
 import { Container } from "@/components/container";
 import { IntroCarousel } from "@/components/intro-carousel";
 import { SectionHeader } from "@/components/section-header";
+import { majorSeoLinks } from "@/data/seo-pages";
 import {
   fieldReports,
   labNoteShorts,
@@ -10,6 +11,11 @@ import {
   labToolCards,
   services
 } from "@/data/site";
+
+const homeSeoLinks = [
+  ...majorSeoLinks,
+  { href: "/contact", label: "Contact The FileMaker Lab" }
+];
 
 function PlayIcon() {
   return (
@@ -54,13 +60,6 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       <section className="relative border-b border-white/10 bg-black">
-        <h1 className="sr-only">The FileMaker Lab</h1>
-        <p className="sr-only">
-          The FileMaker Lab is a dedicated space where Nick Hunter shares 40+
-          years of FileMaker knowledge: architecture, modernization,
-          AI-assisted development, plugins, automation, performance, and
-          real-world consulting.
-        </p>
         <Image
           src="/images/the-filemaker-lab-command-center.png"
           alt="The FileMaker Lab futuristic command center visual with Nick Hunter, FileMaker panels, code, and green lab branding"
@@ -71,11 +70,42 @@ export default function Home() {
           sizes="100vw"
         />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-graphite-950 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 z-10 pb-8 sm:pb-12">
+          <Container>
+            <h1 className="max-w-4xl text-balance text-4xl font-semibold leading-tight text-white sm:text-6xl">
+              The FileMaker Lab
+            </h1>
+            <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-200">
+              FileMaker consulting, AI-assisted development, plugin
+              development, performance optimization, modernization, and
+              training with Nick Hunter.
+            </p>
+          </Container>
+        </div>
       </section>
 
       <section className="section-reveal border-b border-white/10 py-20 sm:py-28">
         <Container>
           <IntroCarousel />
+        </Container>
+      </section>
+
+      <section className="section-reveal border-b border-white/10 bg-white/[0.02] py-20 sm:py-24">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+            <SectionHeader
+              eyebrow="FileMaker services"
+              title="Find the exact kind of FileMaker help you need."
+              description="The FileMaker Lab has focused pages for consulting, pricing, AI development, plugin development, performance optimization, modernization, training, webinars, Nick Hunter's background, and contact."
+            />
+            <div className="grid gap-3 sm:grid-cols-2">
+              {homeSeoLinks.map((link) => (
+                <ButtonLink key={link.href} href={link.href} variant="secondary">
+                  {link.label}
+                </ButtonLink>
+              ))}
+            </div>
+          </div>
         </Container>
       </section>
 
@@ -123,7 +153,7 @@ export default function Home() {
               eyebrow="Lab Sessions"
               title="Deep dives, webinars, and long-form experiments."
             />
-            <ButtonLink href="/webinars" variant="secondary">
+            <ButtonLink href="/filemaker-webinars" variant="secondary">
               Watch Lab Sessions
             </ButtonLink>
           </div>
@@ -264,7 +294,7 @@ export default function Home() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <ButtonLink href="mailto:hello@thefilemakerlab.com">Work With Nick</ButtonLink>
                 <ButtonLink href="mailto:hello@thefilemakerlab.com?subject=Book%20a%20Lab%20Clinic" variant="secondary">
-                  Book a Lab Clinic
+                  Bring Your FileMaker Problem to the Lab
                 </ButtonLink>
               </div>
             </div>

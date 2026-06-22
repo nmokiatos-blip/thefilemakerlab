@@ -39,7 +39,7 @@ export function SeoServicePage({ page, jsonLd }: SeoServicePageProps) {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href={page.cta.href}>{page.cta.label}</ButtonLink>
-              <ButtonLink href="/filemaker-pricing" variant="secondary">
+              <ButtonLink href="/pricing" variant="secondary">
                 View Pricing
               </ButtonLink>
             </div>
@@ -82,6 +82,29 @@ export function SeoServicePage({ page, jsonLd }: SeoServicePageProps) {
           </div>
         </Container>
       </section>
+
+      {page.faqs ? (
+        <section className="section-reveal border-y border-white/10 bg-graphite-900/70 py-20 sm:py-24">
+          <Container>
+            <SectionHeader
+              eyebrow="FAQ"
+              title={`Questions about ${page.h1}.`}
+            />
+            <div className="mt-10 grid gap-4 lg:grid-cols-2">
+              {page.faqs.map((faq) => (
+                <article key={faq.question} className="lab-panel p-6">
+                  <h2 className="text-lg font-semibold leading-snug text-white">
+                    {faq.question}
+                  </h2>
+                  <p className="mt-4 text-sm leading-6 text-slate-300">
+                    {faq.answer}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </Container>
+        </section>
+      ) : null}
 
       <section className="section-reveal border-y border-white/10 bg-white/[0.02] py-20 sm:py-24">
         <Container>

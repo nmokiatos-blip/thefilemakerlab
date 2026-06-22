@@ -3,12 +3,14 @@ import { Container } from "@/components/container";
 import { ListingCard } from "@/components/cards";
 import { PageHero } from "@/components/page-hero";
 import { pageIntros, tools } from "@/data/site";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Tools",
+export const metadata: Metadata = buildMetadata({
+  title: "FileMaker Developer Tools | The FileMaker Lab",
   description:
-    "Prototype FileMaker developer tools for DDR inspection, script dependency mapping, WebViewer templates, PDF extraction, and AI prompts."
-};
+    "FileMaker developer tools and resources for DDR inspection, script dependency mapping, templates, PDF extraction, AI prompts, and automation.",
+  path: "/tools"
+});
 
 export default function ToolsPage() {
   return (

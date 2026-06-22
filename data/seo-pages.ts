@@ -16,6 +16,10 @@ export type SeoServicePage = {
     href: string;
     label: string;
   };
+  faqs?: {
+    question: string;
+    answer: string;
+  }[];
 };
 
 export const seoPages = {
@@ -76,8 +80,30 @@ export const seoPages = {
       title: "Bring your FileMaker problem to the lab.",
       body: "Tell Nick what you need to build, fix, modernize, speed up, automate, or understand.",
       href: "mailto:hello@thefilemakerlab.com?subject=FileMaker%20Consulting",
-      label: "Contact Nick"
-    }
+      label: "Book a FileMaker Consultation"
+    },
+    faqs: [
+      {
+        question: "What kind of FileMaker consulting do you provide?",
+        answer:
+          "Nick helps with FileMaker architecture, troubleshooting, modernization, performance optimization, AI-assisted workflows, plugin development, automation, training, and coaching."
+      },
+      {
+        question: "Do you work on old FileMaker systems?",
+        answer:
+          "Yes. Legacy FileMaker systems are welcome, including slow systems, messy systems, older business logic, fragile scripts, and solutions that need modernization without breaking daily operations."
+      },
+      {
+        question: "Can you help with FileMaker AI development?",
+        answer:
+          "Yes. Consulting can include FileMaker AI workflows, OpenAI integration, Generate Response from Model workflows, data extraction, document parsing, and automation."
+      },
+      {
+        question: "Do you build FileMaker plugins?",
+        answer:
+          "Yes. Nick works on custom FileMaker plugin development for macOS, Windows, FileMaker Server, automation, native UI, and advanced integrations."
+      }
+    ]
   },
   aiDevelopment: {
     path: "/filemaker-ai-development",
@@ -294,6 +320,58 @@ export const seoPages = {
       label: "Plan Modernization"
     }
   },
+  training: {
+    path: "/filemaker-training",
+    title: "FileMaker Training with Nick Hunter | The FileMaker Lab",
+    description:
+      "FileMaker training and coaching with Nick Hunter covering development, architecture, AI workflows, automation, plugins, modernization, and performance.",
+    eyebrow: "FileMaker training",
+    h1: "FileMaker Training with Nick Hunter",
+    intro:
+      "Learn practical FileMaker development from Nick Hunter through focused training, coaching, webinars, and real-world troubleshooting sessions.",
+    sections: [
+      {
+        title: "FileMaker training for real systems",
+        body: "Training is grounded in the work developers and teams actually face: scripts, relationships, layouts, reporting, performance, automation, integrations, and legacy decisions."
+      },
+      {
+        title: "Developer coaching",
+        body: "Use one-on-one coaching to sharpen FileMaker habits, understand architecture, improve debugging, and make better development decisions."
+      },
+      {
+        title: "FileMaker AI training",
+        body: "Learn how to use AI-assisted workflows for parsing, analysis, documentation, automation, and faster development without losing control of the system."
+      },
+      {
+        title: "Plugin and native tooling training",
+        body: "Understand when FileMaker plugins, native tools, APIs, or server workflows are the cleanest path for a hard problem."
+      },
+      {
+        title: "Performance training",
+        body: "Learn how to diagnose slow FileMaker systems by looking at scripts, portals, calculations, relationships, layouts, server strategy, and PSOS."
+      },
+      {
+        title: "Modernization training",
+        body: "Learn how to approach older FileMaker solutions carefully, preserve business logic, and move systems toward cleaner architecture."
+      }
+    ],
+    highlights: [
+      "FileMaker training",
+      "Developer coaching",
+      "AI workflows",
+      "Architecture",
+      "Performance",
+      "Modernization",
+      "Plugins",
+      "Automation"
+    ],
+    cta: {
+      title: "Build stronger FileMaker habits.",
+      body: "Use training time for coaching, architecture review, AI workflows, troubleshooting, performance, modernization, or plugin strategy.",
+      href: "mailto:hello@thefilemakerlab.com?subject=FileMaker%20Training",
+      label: "Work With Nick"
+    }
+  },
   webinars: {
     path: "/filemaker-webinars",
     title: "FileMaker Webinars & Training | The FileMaker Lab",
@@ -410,11 +488,18 @@ export const seoPages = {
 
 export const majorSeoLinks = [
   { href: "/filemaker-consulting", label: "FileMaker Consulting" },
-  { href: "/filemaker-pricing", label: "Pricing" },
-  { href: "/filemaker-ai-development", label: "AI Development" },
-  { href: "/filemaker-plugin-development", label: "Plugin Development" },
-  { href: "/filemaker-performance-optimization", label: "Performance" },
-  { href: "/filemaker-modernization", label: "Modernization" },
-  { href: "/filemaker-webinars", label: "Webinars" },
+  { href: "/pricing", label: "FileMaker Consulting Pricing" },
+  { href: "/filemaker-ai-development", label: "FileMaker AI Development" },
+  {
+    href: "/filemaker-plugin-development",
+    label: "FileMaker Plugin Development"
+  },
+  {
+    href: "/filemaker-performance-optimization",
+    label: "FileMaker Performance Optimization"
+  },
+  { href: "/filemaker-modernization", label: "FileMaker Modernization" },
+  { href: "/filemaker-training", label: "FileMaker Training" },
+  { href: "/filemaker-webinars", label: "FileMaker Webinars" },
   { href: "/about-nick-hunter", label: "About Nick Hunter" }
 ];

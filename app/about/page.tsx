@@ -3,12 +3,14 @@ import { Container } from "@/components/container";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeader } from "@/components/section-header";
 import { pageIntros } from "@/data/site";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About",
+export const metadata: Metadata = buildMetadata({
+  title: "About The FileMaker Lab | FileMaker Consulting, AI & Plugins",
   description:
-    "About The FileMaker Lab, a research space for AI workflows, native tooling, automation, performance, and advanced FileMaker development."
-};
+    "About The FileMaker Lab, where Nick Hunter shares more than 40 years of FileMaker development experience in consulting, AI, plugins, modernization, and performance.",
+  path: "/about"
+});
 
 export default function AboutPage() {
   return (
@@ -23,10 +25,12 @@ export default function AboutPage() {
             />
             <div className="space-y-5 text-lg leading-8 text-slate-300">
               <p>
-                The FileMaker Lab is run from the point of view of a long-time FileMaker developer
-                who wants better workflows for the problems that actually show up in mature systems:
-                schema complexity, script dependencies, performance, automation boundaries, and the
-                gap between prototype and production.
+                The FileMaker Lab is run by Nick Hunter, a FileMaker developer
+                and consultant with more than 40 years of FileMaker development
+                experience. The lab focuses on the problems that actually show
+                up in mature systems: schema complexity, script dependencies,
+                performance, automation boundaries, and the gap between
+                prototype and production.
               </p>
               <p>
                 AI is treated as a serious tool, not a magic layer. Plugins are treated as native

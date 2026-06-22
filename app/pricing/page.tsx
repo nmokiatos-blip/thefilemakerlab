@@ -3,13 +3,13 @@ import { ButtonLink } from "@/components/button-link";
 import { Container } from "@/components/container";
 import { SectionHeader } from "@/components/section-header";
 import { cn } from "@/lib/utils";
-import { buildMetadata } from "@/lib/seo";
+import { buildFaqPageSchema, buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "FileMaker Consulting Pricing | $75/hour Fixed Rate",
+  title: "FileMaker Consulting Pricing | $75/hour Fixed Rate | The FileMaker Lab",
   description:
-    "Simple FileMaker consulting pricing: fixed $75/hour rate, 10-hour minimum package, no BS, no surprise invoices.",
-  path: "/filemaker-pricing"
+    "Simple FileMaker consulting pricing with Nick Hunter: fixed USD $75/hour, 10-hour minimum package, no surprise invoices, flexible FileMaker help.",
+  path: "/pricing"
 });
 
 const hourlyRate = "USD $75/hour";
@@ -70,31 +70,38 @@ const flexibleUses = [
 
 const faqs = [
   {
-    question: "Is the rate always USD $75/hour?",
-    answer: "Yes. The rate is fixed at USD $75/hour. You choose the package size."
-  },
-  {
-    question: "What is the minimum package?",
-    answer: "The minimum package is 10 hours, for USD $750."
-  },
-  {
-    question: "Can I use the hours for different types of work?",
+    question: "What is your FileMaker consulting rate?",
     answer:
-      "Yes. The hours are flexible and can be used for development, troubleshooting, cleanup, modernization, AI integration, training, architecture, or strategic advice."
+      "The FileMaker consulting rate is fixed at USD $75/hour. You choose the package size, and the rate stays the same."
   },
   {
-    question: "Is the 60-hour package a full month?",
+    question: "Is there a minimum package?",
+    answer: "Yes. The minimum package is 10 hours, for USD $750."
+  },
+  {
+    question: "Can I use the hours for different FileMaker work?",
     answer:
-      "Yes. The 60-hour package represents a full month of Nick's dedicated FileMaker work."
+      "Yes. Hours are flexible and can be used for development, troubleshooting, cleanup, modernization, AI integration, plugin workflows, training, architecture, planning, or strategic advice."
+  },
+  {
+    question: "Do you work on old FileMaker systems?",
+    answer:
+      "Yes. Existing systems, old systems, broken systems, slow systems, messy systems, and modernization projects are welcome."
+  },
+  {
+    question: "Do you help with FileMaker AI?",
+    answer:
+      "Yes. Consulting can include FileMaker AI workflows, OpenAI integration, Generate Response from Model, data extraction, document parsing, and automation."
+  },
+  {
+    question: "Do you build FileMaker plugins?",
+    answer:
+      "Yes. Nick works on custom FileMaker plugin development for macOS, Windows, FileMaker Server, automation, native UI, and advanced integrations."
   },
   {
     question: "Do unused hours expire?",
-    answer: "Unused-hour policy can be defined here."
-  },
-  {
-    question: "Do you work only on new FileMaker solutions?",
     answer:
-      "No. Existing systems, old systems, broken systems, slow systems, messy systems, and modernization projects are welcome."
+      "Unused hours are handled by agreement when the package is booked, so expectations are clear before work begins."
   }
 ];
 
@@ -123,8 +130,11 @@ function PricingHero() {
             <ButtonLink href="mailto:hello@thefilemakerlab.com?subject=Book%20a%20FileMaker%20Consultation">
               Book a FileMaker Consultation
             </ButtonLink>
-            <ButtonLink href="#packages" variant="secondary">
-              View Packages
+            <ButtonLink
+              href="mailto:hello@thefilemakerlab.com?subject=Start%20with%2010%20Hours"
+              variant="secondary"
+            >
+              Start with 10 Hours
             </ButtonLink>
           </div>
         </div>
@@ -363,6 +373,12 @@ function PricingFAQ() {
 export default function PricingPage() {
   return (
     <main className="overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(buildFaqPageSchema(faqs))
+        }}
+      />
       <PricingHero />
       <PricingPhilosophy />
       <PackageGrid />

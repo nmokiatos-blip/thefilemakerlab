@@ -3,12 +3,14 @@ import { Container } from "@/components/container";
 import { ListingCard } from "@/components/cards";
 import { PageHero } from "@/components/page-hero";
 import { labNotes, pageIntros } from "@/data/site";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Lab Notes",
+export const metadata: Metadata = buildMetadata({
+  title: "FileMaker Lab Notes | AI, Automation, DDR XML & Developer Practice",
   description:
-    "Research notes and articles about FileMaker AI workflows, DDR XML, automation, native tools, and developer practice."
-};
+    "Research notes and articles from The FileMaker Lab about FileMaker AI workflows, DDR XML, automation, native tools, and developer practice.",
+  path: "/lab-notes"
+});
 
 export default function LabNotesPage() {
   return (

@@ -81,6 +81,18 @@ export const personSchema = {
   ]
 };
 
+export const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "The FileMaker Lab",
+  url: siteUrl,
+  publisher: {
+    "@type": "Organization",
+    name: "The FileMaker Lab",
+    url: siteUrl
+  }
+};
+
 export const fileMakerConsultingServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -103,6 +115,26 @@ export const fileMakerConsultingServiceSchema = {
     price: "75",
     priceCurrency: "USD",
     unitText: "HOUR",
-    url: `${siteUrl}/filemaker-pricing`
+    url: `${siteUrl}/pricing`
   }
 };
+
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+export function buildFaqPageSchema(faqs: FaqItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer
+      }
+    }))
+  };
+}

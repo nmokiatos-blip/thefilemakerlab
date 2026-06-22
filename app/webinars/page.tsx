@@ -3,12 +3,14 @@ import { Container } from "@/components/container";
 import { ListingCard } from "@/components/cards";
 import { PageHero } from "@/components/page-hero";
 import { webinars, pageIntros } from "@/data/site";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Webinars",
+export const metadata: Metadata = buildMetadata({
+  title: "FileMaker Webinars | AI, Plugins, Automation & Performance",
   description:
-    "Practical webinars about FileMaker AI workflows, DDR analysis, Codex, plugins, automation, and performance."
-};
+    "Practical FileMaker webinars about AI workflows, DDR analysis, Codex, plugins, automation, modernization, and performance.",
+  path: "/webinars"
+});
 
 export default function WebinarsPage() {
   return (

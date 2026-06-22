@@ -2,16 +2,19 @@ import type { MetadataRoute } from "next";
 
 const routes = [
   "",
+  "/pricing",
   "/filemaker-consulting",
-  "/filemaker-pricing",
   "/filemaker-ai-development",
   "/filemaker-plugin-development",
   "/filemaker-performance-optimization",
   "/filemaker-modernization",
+  "/filemaker-training",
   "/filemaker-webinars",
+  "/webinars",
   "/about-nick-hunter",
   "/lab-notes",
   "/tools",
+  "/about",
   "/contact"
 ];
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Footer } from "@/components/footer";
 import { Navigation } from "@/components/navigation";
-import { organizationSchema, personSchema } from "@/lib/seo";
+import { organizationSchema, personSchema, websiteSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://thefilemakerlab.com"),
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | The FileMaker Lab"
   },
   description:
-    "FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, and webinars with Nick Hunter.",
+    "FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, and training with Nick Hunter.",
   applicationName: "The FileMaker Lab",
   keywords: [
     "FileMaker",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The FileMaker Lab | FileMaker Consulting, AI, Plugins & Modernization",
     description:
-      "FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, and webinars with Nick Hunter.",
+      "FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, and training with Nick Hunter.",
     url: "https://thefilemakerlab.com",
     siteName: "The FileMaker Lab",
     images: [
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The FileMaker Lab | FileMaker Consulting, AI, Plugins & Modernization",
     description:
-      "FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, and webinars with Nick Hunter.",
+      "FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, and training with Nick Hunter.",
     images: ["/images/the-filemaker-lab-command-center.png"]
   },
   alternates: {
@@ -62,7 +62,11 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([organizationSchema, personSchema])
+            __html: JSON.stringify([
+              organizationSchema,
+              personSchema,
+              websiteSchema
+            ])
           }}
         />
         <Navigation />

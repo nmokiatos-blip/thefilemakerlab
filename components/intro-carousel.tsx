@@ -28,9 +28,13 @@ const slides = [
     shortLabel: "FileMaker Short",
     shortTitle: "What Is FileMaker?",
     body: [
-      "Placeholder text coming soon."
+      "FileMaker is a practical platform for building business systems around the way people actually work: data, workflows, reports, automation, relationships, and interfaces in one environment.",
+      "The FileMaker Lab looks at FileMaker as a modern application platform that can connect to AI, native plugins, APIs, server-side automation, and the tools teams already depend on."
     ],
-    statement: []
+    statement: [
+      "The point is not just storing data.",
+      "The point is building the workflow around it."
+    ]
   },
   {
     eyebrow: "Work with Nick",
@@ -38,13 +42,17 @@ const slides = [
     shortLabel: "Clinic Short",
     shortTitle: "Work With Nick",
     body: [
-      "Placeholder text coming soon."
+      "Bring a slow system, a confusing script, a modernization plan, an AI workflow, a plugin idea, or a FileMaker project that needs experienced judgment.",
+      "Nick Hunter has more than 40 years of FileMaker development experience and works directly on architecture, troubleshooting, performance, automation, plugins, training, and practical consulting."
     ],
-    statement: []
+    statement: [
+      "Start with the real problem.",
+      "Then build the cleanest FileMaker path forward."
+    ]
   }
 ];
 
-function ShortVideoPlaceholder({
+function ShortVideoPreview({
   label,
   title
 }: {
@@ -67,7 +75,7 @@ function ShortVideoPlaceholder({
         </div>
         <div className="absolute inset-x-5 bottom-5">
           <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-lab-green">
-            YouTube Short Placeholder
+            FileMaker Lab Video
           </p>
           <p className="mt-2 text-xl font-semibold leading-tight text-white">
             {title}
@@ -76,10 +84,11 @@ function ShortVideoPlaceholder({
       </div>
       <div className="grid gap-4 px-3 py-4 sm:grid-cols-[1fr_auto] sm:items-center">
         <p className="text-sm text-slate-400">
-          Replace with the YouTube Shorts embed when published.
+          Short-form lab notes for FileMaker consulting, AI, plugins,
+          performance, modernization, and training.
         </p>
         <span className="rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-slate-400">
-          Coming Soon
+          Lab preview
         </span>
       </div>
     </div>
@@ -104,7 +113,7 @@ export function IntroCarousel() {
         key={activeIndex}
         className="lab-scan-slide grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start"
       >
-        <ShortVideoPlaceholder
+        <ShortVideoPreview
           label={activeSlide.shortLabel}
           title={activeSlide.shortTitle}
         />

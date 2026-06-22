@@ -1,6 +1,10 @@
 import { SeoServicePage } from "@/components/seo-service-page";
 import { seoPages } from "@/data/seo-pages";
-import { buildMetadata, fileMakerConsultingServiceSchema } from "@/lib/seo";
+import {
+  buildFaqPageSchema,
+  buildMetadata,
+  fileMakerConsultingServiceSchema
+} from "@/lib/seo";
 
 const page = seoPages.consulting;
 
@@ -11,5 +15,13 @@ export const metadata = buildMetadata({
 });
 
 export default function FileMakerConsultingPage() {
-  return <SeoServicePage page={page} jsonLd={fileMakerConsultingServiceSchema} />;
+  return (
+    <SeoServicePage
+      page={page}
+      jsonLd={[
+        fileMakerConsultingServiceSchema,
+        buildFaqPageSchema(page.faqs ?? [])
+      ]}
+    />
+  );
 }

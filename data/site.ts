@@ -4,8 +4,9 @@ export const navItems = [
   { href: "/filemaker-plugin-development", label: "Plugins" },
   { href: "/filemaker-performance-optimization", label: "Performance" },
   { href: "/filemaker-modernization", label: "Modernization" },
+  { href: "/filemaker-training", label: "Training" },
   { href: "/filemaker-webinars", label: "Webinars" },
-  { href: "/filemaker-pricing", label: "Pricing" },
+  { href: "/pricing", label: "Pricing" },
   { href: "/filemaker-consulting", label: "Work With Nick" },
 ];
 
@@ -86,48 +87,48 @@ export const labSessions = [
     title: "The AI Shift: Why FileMaker Is More Relevant Than Ever",
     description:
       "FileMaker has always crossed technology waves. AI makes the bridge stronger.",
-    status: "Coming Soon"
+    status: "Featured session"
   },
   {
     number: "002",
     title: "Stop Grinding Code: Let AI Handle the Repetition",
     description:
       "Scripts, calculations, parsing, formatting, and routine logic are changing fast.",
-    status: "Coming Soon"
+    status: "Developer training"
   },
   {
     number: "003",
     title: "FileMaker Meets Native macOS",
     description:
       "A look at native tools, plugin thinking, and what happens when FileMaker leaves the old boundaries.",
-    status: "Coming Soon"
+    status: "Plugin session"
   }
 ];
 
 export const labNoteShorts = [
   {
     title: "Why FileMaker Is a Bridge Again",
-    date: "Soon",
+    date: "Lab Note",
     accent: "cyan"
   },
   {
     title: "Stop Grinding Routine Scripts",
-    date: "Soon",
+    date: "Lab Note",
     accent: "green"
   },
   {
     title: "DDR Exports Are Signal",
-    date: "Soon",
+    date: "Lab Note",
     accent: "blue"
   },
   {
     title: "Native Tools Change the Edge",
-    date: "Soon",
+    date: "Lab Note",
     accent: "violet"
   },
   {
     title: "The AI Wave Is Already Here",
-    date: "Soon",
+    date: "Lab Note",
     accent: "red"
   }
 ];
@@ -252,7 +253,7 @@ export const webinars = [
     title: "Performance Debugging Like a Scientist",
     description:
       "A measured approach to FileMaker speed problems using hypotheses, experiments, and instrumentation.",
-    status: "Replay soon"
+    status: "Performance training"
   },
   {
     title: "From Idea to Plugin",

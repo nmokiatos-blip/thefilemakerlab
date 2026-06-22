@@ -91,6 +91,163 @@ a {
   mask-image: linear-gradient(90deg, transparent, black 18%, black 86%, transparent);
 }
 
+.terminal-decode-slide {
+  position: relative;
+  isolation: isolate;
+}
+
+.terminal-decode-slide::before {
+  content: "";
+  position: absolute;
+  inset: -24px -18px;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent, rgba(56, 232, 255, 0.1), transparent),
+    radial-gradient(circle at 68% 18%, rgba(89, 240, 165, 0.08), transparent 34%);
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: terminal-decode-field 900ms ease-out both;
+}
+
+.terminal-decode-video {
+  animation: terminal-module-lock 720ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.terminal-scanline {
+  pointer-events: none;
+  opacity: 0;
+  background:
+    linear-gradient(180deg, transparent 0 42%, rgba(89, 240, 165, 0.28) 49%, rgba(56, 232, 255, 0.22) 50%, transparent 58%),
+    linear-gradient(90deg, transparent, rgba(56, 232, 255, 0.08), transparent);
+  mix-blend-mode: screen;
+  animation: terminal-scanline 860ms ease-out 120ms both;
+}
+
+.terminal-decode-title {
+  animation: terminal-title-decode 720ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.terminal-decode-line {
+  opacity: 0;
+  transform: translateY(12px);
+  filter: blur(6px);
+  animation: terminal-line-decode 680ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: var(--decode-delay, 120ms);
+}
+
+.terminal-selector-active {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 22px rgba(89, 240, 165, 0.28);
+}
+
+.terminal-selector-active::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.72), transparent);
+  transform: translateX(-110%);
+  animation: terminal-selector-sweep 1.8s ease-in-out infinite;
+}
+
+@keyframes terminal-decode-field {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  28% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.54;
+    transform: translateY(0);
+  }
+}
+
+@keyframes terminal-module-lock {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+    filter: blur(8px);
+  }
+
+  54% {
+    opacity: 1;
+    filter: blur(1px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes terminal-scanline {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+@keyframes terminal-title-decode {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(8px);
+    clip-path: inset(0 18% 0 0);
+  }
+
+  48% {
+    opacity: 1;
+    filter: blur(1px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes terminal-line-decode {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(6px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes terminal-selector-sweep {
+  0% {
+    transform: translateX(-110%);
+  }
+
+  45%,
+  100% {
+    transform: translateX(110%);
+  }
+}
+
 .code-rain {
   background-image:
     linear-gradient(180deg, transparent 0%, rgba(89, 240, 165, 0.16) 48%, transparent 100%),
@@ -121,8 +278,23 @@ a {
 
 @media (prefers-reduced-motion: reduce) {
   .section-reveal,
-  .code-rain {
+  .code-rain,
+  .terminal-decode-slide::before,
+  .terminal-decode-video,
+  .terminal-scanline,
+  .terminal-decode-title,
+  .terminal-decode-line,
+  .terminal-selector-active::after {
     animation: none;
+  }
+
+  .terminal-decode-line,
+  .terminal-decode-title,
+  .terminal-decode-video {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    clip-path: none;
   }
 }
 

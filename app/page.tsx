@@ -10,6 +10,47 @@ import {
   services
 } from "@/data/site";
 
+const introSlides = [
+  {
+    eyebrow: "What this is",
+    title: "Decades of FileMaker development experience, opened up.",
+    shortLabel: "Intro Short",
+    shortTitle: "The FileMaker Lab Intro",
+    body: [
+      "The FileMaker Lab is where Nick Hunter opens the doors to more than 40 years of FileMaker development experience.",
+      "This is a dedicated space for sharing the knowledge, best practices, techniques, methods, architecture, and problem-solving habits that come from building real systems for real people.",
+      "From the first customer idea to the final working solution, The FileMaker Lab explores every stage of development: how to conceive the file, structure the architecture, build the solution, improve old systems, modernize workflows, connect AI, create custom plugins, automate processes, and push FileMaker beyond its traditional limits.",
+      "Through webinars, videos, tools, experiments, and field notes, Nick shares what he is learning and building in his everyday work with FileMaker, AI-assisted development, performance analysis, custom plugins, automation, and modern development practice."
+    ],
+    statement: [
+      "The goal is not novelty.",
+      "The goal is better FileMaker work with clearer leverage."
+    ]
+  },
+  {
+    eyebrow: "Foundation",
+    title: "What is FileMaker",
+    shortLabel: "FileMaker Short",
+    shortTitle: "What Is FileMaker?",
+    body: [],
+    statement: []
+  },
+  {
+    eyebrow: "Work with Nick",
+    title: "Bring your problem into the lab.",
+    shortLabel: "Clinic Short",
+    shortTitle: "Work With Nick",
+    body: [
+      "No heavy contracts. No complicated process. Book the time you need. Bring the problem. Let's solve it.",
+      "Use a Lab Clinic for focused diagnosis, mentoring for deeper learning, partner sessions for strategy, or Lab Engineering for advanced FileMaker, AI, automation, plugin, and native tool work."
+    ],
+    statement: [
+      "Real problems.",
+      "Real systems. Real solutions."
+    ]
+  }
+];
+
 function PlayIcon() {
   return (
     <span className="grid size-11 place-items-center rounded-full border border-white/15 bg-white/10 text-lab-cyan shadow-glow transition group-hover:scale-105 group-hover:bg-lab-cyan group-hover:text-graphite-950">
@@ -24,6 +65,47 @@ function DownloadIcon() {
       <span className="absolute left-1/2 top-0 h-3 w-px -translate-x-1/2 bg-current" />
       <span className="absolute bottom-0 left-1/2 size-2 -translate-x-1/2 rotate-45 border-b border-r border-current" />
     </span>
+  );
+}
+
+function ShortVideoPlaceholder({
+  label,
+  title
+}: {
+  label: string;
+  title: string;
+}) {
+  return (
+    <div className="lab-card group mx-auto w-full max-w-sm overflow-hidden p-3">
+      <div className="relative aspect-[9/16] overflow-hidden rounded-lg bg-[radial-gradient(circle_at_72%_28%,rgba(56,232,255,0.25),transparent_34%),linear-gradient(135deg,rgba(89,240,165,0.14),rgba(5,6,8,0.98))]">
+        <div className="lab-grid absolute inset-0 opacity-70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
+        <div className="absolute left-5 top-5 rounded-lg border border-white/10 bg-black/35 px-3 py-2 font-mono text-xs uppercase tracking-[0.2em] text-lab-cyan">
+          {label}
+        </div>
+        <div className="absolute inset-0 grid place-items-center">
+          <span className="grid size-16 place-items-center rounded-full border border-white/15 bg-white/10 text-lab-cyan shadow-glow transition group-hover:scale-105 group-hover:bg-lab-cyan group-hover:text-graphite-950">
+            <span className="ml-1 h-0 w-0 border-y-[9px] border-l-[14px] border-y-transparent border-l-current" />
+          </span>
+        </div>
+        <div className="absolute inset-x-5 bottom-5">
+          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-lab-green">
+            YouTube Short Placeholder
+          </p>
+          <p className="mt-2 text-xl font-semibold leading-tight text-white">
+            {title}
+          </p>
+        </div>
+      </div>
+      <div className="grid gap-4 px-3 py-4 sm:grid-cols-[1fr_auto] sm:items-center">
+        <p className="text-sm text-slate-400">
+          Replace with the YouTube Shorts embed when published.
+        </p>
+        <span className="rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-slate-400">
+          Coming Soon
+        </span>
+      </div>
+    </div>
   );
 }
 
@@ -71,77 +153,49 @@ export default function Home() {
 
       <section className="section-reveal border-b border-white/10 py-20 sm:py-28">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <div className="lab-card group mx-auto w-full max-w-sm overflow-hidden p-3">
-              <div className="relative aspect-[9/16] overflow-hidden rounded-lg bg-[radial-gradient(circle_at_72%_28%,rgba(56,232,255,0.25),transparent_34%),linear-gradient(135deg,rgba(89,240,165,0.14),rgba(5,6,8,0.98))]">
-                <div className="lab-grid absolute inset-0 opacity-70" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
-                <div className="absolute left-5 top-5 rounded-lg border border-white/10 bg-black/35 px-3 py-2 font-mono text-xs uppercase tracking-[0.2em] text-lab-cyan">
-                  Intro Short
+          <div className="intro-carousel overflow-hidden">
+            <div className="intro-carousel-track flex">
+              {introSlides.map((slide) => (
+                <div
+                  key={slide.title}
+                  className="intro-carousel-slide grid shrink-0 basis-full gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start"
+                >
+                  <ShortVideoPlaceholder
+                    label={slide.shortLabel}
+                    title={slide.shortTitle}
+                  />
+                  <div className="space-y-5 text-lg leading-8 text-slate-300">
+                    <div>
+                      <p className="font-mono text-xs font-semibold uppercase tracking-[0.26em] text-lab-cyan">
+                        {slide.eyebrow}
+                      </p>
+                      <h2 className="mt-5 text-balance text-3xl font-semibold leading-tight text-white sm:text-5xl">
+                        {slide.title}
+                      </h2>
+                    </div>
+                    {slide.body.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                    {slide.statement.length > 0 ? (
+                      <div className="border-l border-lab-green/40 pl-5">
+                        <p className="text-xl font-semibold text-white">
+                          {slide.statement[0]}
+                        </p>
+                        <p className="mt-2 text-xl font-semibold text-lab-green">
+                          {slide.statement[1]}
+                        </p>
+                      </div>
+                    ) : (
+                      <div className="min-h-64" aria-hidden="true" />
+                    )}
+                  </div>
                 </div>
-                <div className="absolute inset-0 grid place-items-center">
-                  <span className="grid size-16 place-items-center rounded-full border border-white/15 bg-white/10 text-lab-cyan shadow-glow transition group-hover:scale-105 group-hover:bg-lab-cyan group-hover:text-graphite-950">
-                    <span className="ml-1 h-0 w-0 border-y-[9px] border-l-[14px] border-y-transparent border-l-current" />
-                  </span>
-                </div>
-                <div className="absolute inset-x-5 bottom-5">
-                  <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-lab-green">
-                    YouTube Short Placeholder
-                  </p>
-                  <p className="mt-2 text-xl font-semibold leading-tight text-white">
-                    The FileMaker Lab Intro
-                  </p>
-                </div>
-              </div>
-              <div className="grid gap-4 px-3 py-4 sm:grid-cols-[1fr_auto] sm:items-center">
-                <p className="text-sm text-slate-400">
-                  Replace with the YouTube Shorts embed when the intro is published.
-                </p>
-                <span className="rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-slate-400">
-                  Coming Soon
-                </span>
-              </div>
+              ))}
             </div>
-            <div className="space-y-5 text-lg leading-8 text-slate-300">
-              <div>
-                <p className="font-mono text-xs font-semibold uppercase tracking-[0.26em] text-lab-cyan">
-                  What this is
-                </p>
-                <h2 className="mt-5 text-balance text-3xl font-semibold leading-tight text-white sm:text-5xl">
-                  Decades of FileMaker development experience, opened up.
-                </h2>
-              </div>
-              <p>
-                The FileMaker Lab is where Nick Hunter opens the doors to more
-                than 40 years of FileMaker development experience.
-              </p>
-              <p>
-                This is a dedicated space for sharing the knowledge, best
-                practices, techniques, methods, architecture, and problem-solving
-                habits that come from building real systems for real people.
-              </p>
-              <p>
-                From the first customer idea to the final working solution, The
-                FileMaker Lab explores every stage of development: how to
-                conceive the file, structure the architecture, build the
-                solution, improve old systems, modernize workflows, connect AI,
-                create custom plugins, automate processes, and push FileMaker
-                beyond its traditional limits.
-              </p>
-              <p>
-                Through webinars, videos, tools, experiments, and field notes,
-                Nick shares what he is learning and building in his everyday work
-                with FileMaker, AI-assisted development, performance analysis,
-                custom plugins, automation, and modern development practice.
-              </p>
-              <div className="border-l border-lab-green/40 pl-5">
-                <p className="text-xl font-semibold text-white">
-                  The goal is not novelty.
-                </p>
-                <p className="mt-2 text-xl font-semibold text-lab-green">
-                  The goal is better FileMaker work with clearer leverage.
-                </p>
-              </div>
+            <div className="mt-8 flex justify-center gap-3" aria-hidden="true">
+              <span className="intro-carousel-dot h-1.5 w-8 rounded-full bg-lab-green" />
+              <span className="intro-carousel-dot h-1.5 w-8 rounded-full bg-lab-green" />
+              <span className="intro-carousel-dot h-1.5 w-8 rounded-full bg-lab-green" />
             </div>
           </div>
         </Container>

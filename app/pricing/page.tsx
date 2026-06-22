@@ -100,8 +100,7 @@ const faqs = [
   },
   {
     question: "Do unused hours expire?",
-    answer:
-      "Unused hours are handled by agreement when the package is booked, so expectations are clear before work begins."
+    answer: "Unused hours remain available for 12 months."
   }
 ];
 

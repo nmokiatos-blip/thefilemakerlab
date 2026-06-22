@@ -77,8 +77,8 @@ export default function Home() {
             </h1>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-200">
               FileMaker consulting, AI-assisted development, plugin
-              development, performance optimization, modernization, and
-              training with Nick Hunter.
+              development, performance optimization, modernization,
+              automation, and training with Nick Hunter.
             </p>
           </Container>
         </div>

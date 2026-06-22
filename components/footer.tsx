@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { Container } from "@/components/container";
-import { navItems } from "@/data/site";
+import { majorSeoLinks } from "@/data/seo-pages";
+
+const footerLinks = [
+  ...majorSeoLinks.filter((item) => item.href !== "/filemaker-webinars"),
+  { href: "/contact", label: "Contact The FileMaker Lab" }
+];
 
 export function Footer() {
   return (
@@ -15,7 +20,7 @@ export function Footer() {
           </p>
         </div>
         <nav className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate-400" aria-label="Footer navigation">
-          {navItems.map((item) => (
+          {footerLinks.map((item) => (
             <Link
               key={`${item.href}-${item.label}`}
               href={item.href}

@@ -42,6 +42,9 @@ export function SeoServicePage({ page, jsonLd }: SeoServicePageProps) {
               <ButtonLink href="/pricing" variant="secondary">
                 View Pricing
               </ButtonLink>
+              <ButtonLink href="/contact" variant="secondary">
+                Contact
+              </ButtonLink>
             </div>
           </div>
 
@@ -62,6 +65,18 @@ export function SeoServicePage({ page, jsonLd }: SeoServicePageProps) {
           </aside>
         </Container>
       </section>
+
+      {page.longForm ? (
+        <section className="section-reveal border-b border-white/10 py-20 sm:py-24">
+          <Container>
+            <div className="mx-auto max-w-4xl space-y-6 text-lg leading-8 text-slate-300">
+              {page.longForm.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </Container>
+        </section>
+      ) : null}
 
       <section className="section-reveal py-20 sm:py-24">
         <Container>
@@ -149,6 +164,9 @@ export function SeoServicePage({ page, jsonLd }: SeoServicePageProps) {
             </p>
             <div className="mt-9">
               <ButtonLink href={page.cta.href}>{page.cta.label}</ButtonLink>
+              <ButtonLink href="/contact" variant="secondary" className="ml-0 mt-3 sm:ml-3 sm:mt-0">
+                Contact The FileMaker Lab
+              </ButtonLink>
             </div>
           </div>
         </Container>

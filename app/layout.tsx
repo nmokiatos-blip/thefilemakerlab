@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | The FileMaker Lab"
   },
   description:
-    "FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, and training with Nick Hunter.",
+    "FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, automation, and training with Nick Hunter.",
   applicationName: "The FileMaker Lab",
   keywords: [
     "FileMaker",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The FileMaker Lab | FileMaker Consulting, AI, Plugins & Modernization",
     description:
-      "FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, and training with Nick Hunter.",
+      "FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, automation, and training with Nick Hunter.",
     url: "https://thefilemakerlab.com",
     siteName: "The FileMaker Lab",
     images: [
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The FileMaker Lab | FileMaker Consulting, AI, Plugins & Modernization",
     description:
-      "FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, and training with Nick Hunter.",
+      "FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, automation, and training with Nick Hunter.",
     images: ["/images/the-filemaker-lab-command-center.png"]
   },
   alternates: {

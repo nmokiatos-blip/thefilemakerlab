@@ -16,7 +16,11 @@ export function Footer() {
         </div>
         <nav className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate-400" aria-label="Footer navigation">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="hover:text-white">
+            <Link
+              key={`${item.href}-${item.label}`}
+              href={item.href}
+              className="hover:text-white"
+            >
               {item.label}
             </Link>
           ))}

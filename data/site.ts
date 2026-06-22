@@ -1,10 +1,12 @@
 export const navItems = [
-  { href: "/#lab-notes", label: "Lab Notes" },
-  { href: "/#lab-sessions", label: "Lab Sessions" },
-  { href: "/#lab-tools", label: "Lab Tools" },
-  { href: "/#field-reports", label: "Field Reports" },
-  { href: "/#beyond", label: "Beyond the Limits" },
-  { href: "/#work", label: "Work With Nick" },
+  { href: "/filemaker-consulting", label: "Consulting" },
+  { href: "/filemaker-ai-development", label: "AI Development" },
+  { href: "/filemaker-plugin-development", label: "Plugins" },
+  { href: "/filemaker-performance-optimization", label: "Performance" },
+  { href: "/filemaker-modernization", label: "Modernization" },
+  { href: "/filemaker-webinars", label: "Webinars" },
+  { href: "/filemaker-pricing", label: "Pricing" },
+  { href: "/filemaker-consulting", label: "Work With Nick" },
 ];
 
 export const labAreas = [

@@ -54,9 +54,12 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       <section className="relative border-b border-white/10 bg-black">
-        <h1 className="sr-only">The FileMaker Lab - Beyond the Limits</h1>
+        <h1 className="sr-only">The FileMaker Lab</h1>
         <p className="sr-only">
-          Where Nick Hunter pushes FileMaker beyond its limits.
+          The FileMaker Lab is a dedicated space where Nick Hunter shares 40+
+          years of FileMaker knowledge: architecture, modernization,
+          AI-assisted development, plugins, automation, performance, and
+          real-world consulting.
         </p>
         <Image
           src="/images/the-filemaker-lab-command-center.png"

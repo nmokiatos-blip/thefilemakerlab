@@ -16,7 +16,7 @@ export function Navigation() {
         <nav aria-label="Primary navigation" className="hidden items-center justify-center gap-2 md:flex">
           {navItems.map((item) => (
             <Link
-              key={item.href}
+              key={`${item.href}-${item.label}`}
               href={item.href}
               className={
                 item.label === "Work With Nick"
@@ -59,7 +59,7 @@ export function Navigation() {
       >
         {navItems.map((item) => (
           <Link
-            key={item.href}
+            key={`${item.href}-${item.label}`}
             href={item.href}
             className={
               item.label === "Work With Nick"

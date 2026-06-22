@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Footer } from "@/components/footer";
 import { Navigation } from "@/components/navigation";
+import { organizationSchema, personSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://thefilemakerlab.com"),
   title: {
-    default: "The FileMaker Lab | Beyond the Limits",
+    default: "The FileMaker Lab | FileMaker Consulting, AI, Plugins & Modernization",
     template: "%s | The FileMaker Lab"
   },
   description:
-    "A futuristic software lab for FileMaker, AI, plugins, automation, native code, performance engineering, and real-world system building.",
+    "FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, and webinars with Nick Hunter.",
   applicationName: "The FileMaker Lab",
   keywords: [
     "FileMaker",
@@ -22,9 +23,9 @@ export const metadata: Metadata = {
     "FileMaker performance"
   ],
   openGraph: {
-    title: "The FileMaker Lab | Beyond the Limits",
+    title: "The FileMaker Lab | FileMaker Consulting, AI, Plugins & Modernization",
     description:
-      "A futuristic command center where FileMaker becomes something bigger.",
+      "FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, and webinars with Nick Hunter.",
     url: "https://thefilemakerlab.com",
     siteName: "The FileMaker Lab",
     images: [
@@ -40,9 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The FileMaker Lab | Beyond the Limits",
+    title: "The FileMaker Lab | FileMaker Consulting, AI, Plugins & Modernization",
     description:
-      "A futuristic command center where FileMaker becomes something bigger.",
+      "FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, and webinars with Nick Hunter.",
     images: ["/images/the-filemaker-lab-command-center.png"]
   },
   alternates: {
@@ -58,6 +59,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([organizationSchema, personSchema])
+          }}
+        />
         <Navigation />
         {children}
         <Footer />

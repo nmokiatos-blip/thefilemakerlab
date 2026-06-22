@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import type { CSSProperties } from "react";
 
+const slideDuration = 8000;
+
 const slides = [
   {
     eyebrow: "What this is",
@@ -50,10 +52,10 @@ function ShortVideoPlaceholder({
   title: string;
 }) {
   return (
-    <div className="terminal-decode-video lab-card group mx-auto w-full max-w-sm overflow-hidden p-3">
+    <div className="lab-scan-video lab-card group mx-auto w-full max-w-sm overflow-hidden p-3">
       <div className="relative aspect-[9/16] overflow-hidden rounded-lg bg-[radial-gradient(circle_at_72%_28%,rgba(56,232,255,0.25),transparent_34%),linear-gradient(135deg,rgba(89,240,165,0.14),rgba(5,6,8,0.98))]">
         <div className="lab-grid absolute inset-0 opacity-70" />
-        <div className="terminal-scanline absolute inset-0" />
+        <div className="lab-scanline absolute inset-0" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
         <div className="absolute left-5 top-5 rounded-lg border border-white/10 bg-black/35 px-3 py-2 font-mono text-xs uppercase tracking-[0.2em] text-lab-cyan">
           {label}
@@ -89,18 +91,18 @@ export function IntroCarousel() {
   const activeSlide = slides[activeIndex];
 
   useEffect(() => {
-    const timer = window.setInterval(() => {
+    const timer = window.setTimeout(() => {
       setActiveIndex((current) => (current + 1) % slides.length);
-    }, 8000);
+    }, slideDuration);
 
-    return () => window.clearInterval(timer);
-  }, []);
+    return () => window.clearTimeout(timer);
+  }, [activeIndex]);
 
   return (
     <div>
       <div
         key={activeIndex}
-        className="terminal-decode-slide grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start"
+        className="lab-scan-slide grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start"
       >
         <ShortVideoPlaceholder
           label={activeSlide.shortLabel}
@@ -108,23 +110,23 @@ export function IntroCarousel() {
         />
         <div className="space-y-5 text-lg leading-8 text-slate-300">
           <div>
-            <h2 className="terminal-decode-title text-balance text-3xl font-semibold leading-tight text-white sm:text-5xl">
+            <h2 className="lab-scan-title text-balance text-3xl font-semibold leading-tight text-white sm:text-5xl">
               {activeSlide.title}
             </h2>
           </div>
           {activeSlide.body.map((paragraph, index) => (
             <p
               key={paragraph}
-              className="terminal-decode-line"
-              style={{ "--decode-delay": `${160 + index * 76}ms` } as CSSProperties}
+              className="lab-scan-copy"
+              style={{ "--scan-delay": `${140 + index * 70}ms` } as CSSProperties}
             >
               {paragraph}
             </p>
           ))}
           {activeSlide.statement.length > 0 ? (
             <div
-              className="terminal-decode-line border-l border-lab-green/40 pl-5"
-              style={{ "--decode-delay": "520ms" } as CSSProperties}
+              className="lab-scan-copy border-l border-lab-green/40 pl-5"
+              style={{ "--scan-delay": "500ms" } as CSSProperties}
             >
               <p className="text-xl font-semibold text-white">
                 {activeSlide.statement[0]}
@@ -148,7 +150,7 @@ export function IntroCarousel() {
             onClick={() => setActiveIndex(index)}
             className={
               activeIndex === index
-                ? "terminal-selector-active h-2 w-12 rounded-full bg-lab-green transition"
+                ? "lab-selector-progress h-2 w-16 rounded-full transition"
                 : "h-2 w-10 rounded-full bg-lab-green/30 transition hover:bg-lab-green/70"
             }
           />

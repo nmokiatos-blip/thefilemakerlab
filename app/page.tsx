@@ -4,13 +4,23 @@ import Image from "next/image";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "The FileMaker Lab | Coming Soon",
+  title: {
+    absolute: "The FileMaker Lab | FileMaker Consulting, AI, Plugins & Modernization"
+  },
   description:
-    "The FileMaker Lab is preparing FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, automation, and training with Nick Hunter.",
+    "The FileMaker Lab by Nick Hunter — FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, automation, and training.",
+  alternates: {
+    canonical: "https://thefilemakerlab.com/"
+  },
+  robots: {
+    index: true,
+    follow: true
+  },
   openGraph: {
-    title: "The FileMaker Lab | Coming Soon",
+    title: "The FileMaker Lab | FileMaker Consulting, AI, Plugins & Modernization",
     description:
-      "The FileMaker Lab is preparing FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, automation, and training with Nick Hunter.",
+      "The FileMaker Lab by Nick Hunter — FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, automation, and training.",
+    url: "https://thefilemakerlab.com/",
     images: [
       {
         url: "/images/the-filemaker-lab-command-center.png",
@@ -22,9 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The FileMaker Lab | Coming Soon",
+    title: "The FileMaker Lab | FileMaker Consulting, AI, Plugins & Modernization",
     description:
-      "The FileMaker Lab is preparing FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, automation, and training with Nick Hunter.",
+      "The FileMaker Lab by Nick Hunter — FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, automation, and training.",
     images: ["/images/the-filemaker-lab-command-center.png"]
   }
 };
@@ -59,6 +69,10 @@ export default function ComingSoonPage() {
               FileMaker consulting, AI-assisted development, plugin
               development, performance optimization, modernization,
               automation, and training with Nick Hunter.
+            </p>
+            <p className="mt-4 max-w-3xl text-base font-semibold leading-7 text-lab-green">
+              Nick Hunter has more than 40 years of FileMaker development
+              experience.
             </p>
           </div>
         </div>

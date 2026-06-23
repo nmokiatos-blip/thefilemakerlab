@@ -19,6 +19,10 @@ export function buildMetadata({
       absolute: title
     },
     description,
+    robots: {
+      index: true,
+      follow: true
+    },
     alternates: {
       canonical: path
     },

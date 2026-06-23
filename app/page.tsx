@@ -12,6 +12,8 @@ import {
   services
 } from "@/data/site";
 
+export const dynamic = "force-dynamic";
+
 const homeSeoLinks = [
   ...majorSeoLinks,
   { href: "/contact", label: "Contact The FileMaker Lab" }
@@ -255,7 +257,7 @@ export default function Home() {
         <Container className="relative">
           <div className="mx-auto max-w-5xl text-center">
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.26em] text-lab-cyan">
-              Beyond the Limits
+              FileMaker and AI
             </p>
             <h2 className="mt-5 text-balance text-4xl font-semibold leading-tight text-white sm:text-6xl">
               FileMaker has always been more than a database. It has always been a bridge.

@@ -5,6 +5,8 @@ import { SectionHeader } from "@/components/section-header";
 import { cn } from "@/lib/utils";
 import { buildFaqPageSchema, buildMetadata } from "@/lib/seo";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = buildMetadata({
   title: "FileMaker Consulting Pricing | $75/hour Fixed Rate | The FileMaker Lab",
   description:

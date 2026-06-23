@@ -1,8 +1,17 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { navItems } from "@/data/site";
 import { Container } from "@/components/container";
 
 export function Navigation() {
+  const pathname = usePathname();
+
+  if (pathname === "/") {
+    return null;
+  }
+
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-graphite-950/80 backdrop-blur-xl">
       <Container className="grid min-h-16 grid-cols-[1fr_auto_1fr] items-center gap-4">

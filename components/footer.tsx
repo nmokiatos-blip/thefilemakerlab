@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Container } from "@/components/container";
 import { majorSeoLinks } from "@/data/seo-pages";
 
@@ -8,6 +11,12 @@ const footerLinks = [
 ];
 
 export function Footer() {
+  const pathname = usePathname();
+
+  if (pathname === "/") {
+    return null;
+  }
+
   return (
     <footer className="border-t border-white/10 bg-graphite-950">
       <Container className="grid gap-8 py-10 sm:grid-cols-[1fr_auto] sm:items-center">

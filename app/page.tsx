@@ -7,10 +7,6 @@ export const metadata: Metadata = {
   title: "The FileMaker Lab | Coming Soon",
   description:
     "The FileMaker Lab is preparing FileMaker consulting, AI-assisted development, plugin development, performance optimization, modernization, automation, and training with Nick Hunter.",
-  robots: {
-    index: false,
-    follow: false
-  },
   openGraph: {
     title: "The FileMaker Lab | Coming Soon",
     description:

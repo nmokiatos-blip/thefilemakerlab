@@ -5,6 +5,32 @@ import { usePathname } from "next/navigation";
 import { navItems } from "@/data/site";
 import { Container } from "@/components/container";
 
+const languages = ["English", "Spanish", "French"];
+
+function LanguageMenu() {
+  return (
+    <details className="group relative">
+      <summary className="flex cursor-pointer list-none items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/[0.06] hover:text-white [&::-webkit-details-marker]:hidden">
+        <span>English</span>
+        <span aria-hidden="true" className="text-[10px] transition group-open:rotate-180">
+          v
+        </span>
+      </summary>
+      <div className="absolute right-0 top-[calc(100%+0.5rem)] z-50 w-36 overflow-hidden rounded-lg border border-white/10 bg-graphite-950 shadow-[0_18px_45px_rgba(0,0,0,0.35)]">
+        {languages.map((language) => (
+          <button
+            key={language}
+            type="button"
+            className="block w-full px-4 py-3 text-left text-sm text-slate-300 transition hover:bg-white/[0.06] hover:text-white"
+          >
+            {language}
+          </button>
+        ))}
+      </div>
+    </details>
+  );
+}
+
 export function Navigation() {
   const pathname = usePathname();
 
@@ -39,12 +65,16 @@ export function Navigation() {
             </Link>
           ))}
         </nav>
-        <Link
-          href="/contact"
-          className="hidden justify-self-end rounded-lg border border-lab-green/40 bg-lab-green/10 px-4 py-2 text-sm font-semibold text-lab-green transition hover:border-lab-green/70 hover:bg-lab-green hover:text-graphite-950 md:inline-flex"
-        >
-          Contact
-        </Link>
+        <div className="hidden justify-self-end md:flex md:items-center md:gap-2">
+          <Link
+            href="/filemaker-consulting"
+            className="inline-flex items-center gap-2 rounded-lg border border-lab-green/40 bg-lab-green/10 px-4 py-2 text-sm font-semibold text-lab-green transition hover:border-lab-green/70 hover:bg-lab-green hover:text-graphite-950"
+          >
+            Work With Nick
+            <span aria-hidden="true">-&gt;</span>
+          </Link>
+          <LanguageMenu />
+        </div>
       </Container>
       <nav
         aria-label="Mobile navigation"
@@ -65,6 +95,22 @@ export function Navigation() {
               <span aria-hidden="true">-&gt;</span>
             ) : null}
           </Link>
+        ))}
+        <Link
+          href="/filemaker-consulting"
+          className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-lab-green/40 bg-lab-green/10 px-3 py-2 text-xs font-semibold text-lab-green"
+        >
+          <span>Work With Nick</span>
+          <span aria-hidden="true">-&gt;</span>
+        </Link>
+        {languages.map((language) => (
+          <button
+            key={language}
+            type="button"
+            className="shrink-0 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-xs font-medium text-slate-300"
+          >
+            {language}
+          </button>
         ))}
       </nav>
     </header>

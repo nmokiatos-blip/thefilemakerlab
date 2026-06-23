@@ -7,7 +7,6 @@ export const navItems = [
   { href: "/filemaker-training", label: "Training" },
   { href: "/filemaker-webinars", label: "Webinars" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/filemaker-consulting", label: "Work With Nick" },
 ];
 
 export const labAreas = [
